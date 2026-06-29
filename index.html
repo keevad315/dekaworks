@@ -601,6 +601,8 @@
       </div>
     </footer>
 
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">Top</button>
+
     <script>
       const navToggle = document.querySelector('.nav-toggle');
       const siteNav = document.querySelector('.site-nav');
@@ -666,6 +668,22 @@
           trackEvent(`cta_click_${label}`);
         });
       });
+
+      const backToTopButton = document.getElementById('back-to-top');
+      if (backToTopButton) {
+        const toggleBackToTop = () => {
+          const shouldShow = window.scrollY > 320;
+          backToTopButton.classList.toggle('show', shouldShow);
+        };
+
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+        toggleBackToTop();
+
+        backToTopButton.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </body>
