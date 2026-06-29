@@ -186,6 +186,14 @@ p {
   color: var(--text);
 }
 
+.text-link {
+  display: inline-flex;
+  margin-top: 0.95rem;
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .hero-points {
   margin: 1rem 0 0;
   padding-left: 1.1rem;
@@ -290,6 +298,242 @@ summary {
   text-align: center;
 }
 
+.pricing-grid,
+.testimonial-grid {
+  align-items: stretch;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.pricing-tag {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  border: 1px solid rgba(110, 231, 255, 0.32);
+  color: var(--brand);
+  background: rgba(110, 231, 255, 0.08);
+  font-size: 0.78rem;
+  padding: 0.2rem 0.55rem;
+  margin: 0;
+}
+
+.pricing-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.pricing-card .btn {
+  margin-top: auto;
+}
+
+.highlight-card {
+  border-color: rgba(110, 231, 255, 0.42);
+  box-shadow: 0 0 0 1px rgba(110, 231, 255, 0.2), var(--shadow);
+}
+
+.pricing-note {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-meta {
+  margin: 0.4rem 0 0;
+  color: var(--brand);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.inline-cta {
+  margin-top: 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.9rem;
+  background: rgba(18, 26, 48, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.inline-cta p {
+  margin: 0;
+}
+
+.contact-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.contact-form,
+.contact-details {
+  background: rgba(18, 26, 48, 0.76);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(10, 15, 29, 0.72);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.72rem 0.8rem;
+  font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(110, 231, 255, 0.5);
+  outline-offset: 1px;
+  border-color: rgba(110, 231, 255, 0.4);
+}
+
+.form-note {
+  margin: 0;
+  color: var(--muted);
+  min-height: 1.4em;
+}
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.contact-details ul {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.service-page main {
+  padding: 5.5rem 0 3rem;
+}
+
+.service-hero {
+  padding: 1.2rem 0 0.6rem;
+}
+
+.breadcrumb {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.breadcrumb span {
+  color: var(--text);
+}
+
+.service-hero p {
+  color: var(--muted);
+}
+
+.service-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.service-panel {
+  background: rgba(18, 26, 48, 0.76);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.service-panel ul {
+  margin: 0.55rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.service-kpi {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.service-kpi .chip {
+  justify-content: center;
+  text-align: center;
+  padding: 0.35rem 0.55rem;
+}
+
+.related-services {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.not-found {
+  min-height: calc(100vh - 72px);
+  display: grid;
+  place-items: center;
+  padding: 5rem 0 3rem;
+}
+
+.not-found-card {
+  width: min(760px, 92%);
+  background: rgba(18, 26, 48, 0.8);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.4rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.not-found-card p {
+  color: var(--muted);
+}
+
+.not-found-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 1rem 0 1.5rem;
@@ -317,10 +561,57 @@ summary {
   color: var(--text);
 }
 
+.legal-page main {
+  padding: 5.5rem 0 3rem;
+}
+
+.legal-hero {
+  padding: 1.25rem 0 0.5rem;
+}
+
+.legal-hero p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.legal-card {
+  margin-top: 1rem;
+  background: rgba(18, 26, 48, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.legal-card section + section {
+  margin-top: 1.3rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.legal-card h2 {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+.legal-card ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.legal-meta {
+  margin-top: 1.2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 @media (max-width: 980px) {
   .hero-grid,
   .cards-grid,
-  .process-list {
+  .process-list,
+  .contact-grid,
+  .service-grid,
+  .service-kpi {
     grid-template-columns: 1fr;
   }
 

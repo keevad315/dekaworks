@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | Deka Works Studio</title>
+    <meta
+      name="description"
+      content="The page you are looking for cannot be found. Return to Deka Works Studio homepage or contact our team."
+    />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href="https://dekaworks.com/404.html" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Deka Works Studio home">
+          <span class="brand-dot"></span>
+          <span>Deka Works Studio</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="not-found">
+      <section class="not-found-card" aria-labelledby="not-found-title">
+        <p class="eyebrow">Error 404</p>
+        <h1 id="not-found-title">Page not found</h1>
+        <p>
+          The page you requested does not exist or may have moved. Continue to the homepage,
+          contact us, or open the client portal.
+        </p>
+        <div class="not-found-actions">
+          <a class="btn" href="index.html">Back to Homepage</a>
+          <a class="btn btn-ghost" href="mailto:support@dekaworks.com">Contact Us</a>
+          <a class="btn btn-ghost" href="https://portal.dekaworks.com/" target="_blank" rel="noopener noreferrer"
+            >Client Portal</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Deka Works Studio — From idea to launch, made easy.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
