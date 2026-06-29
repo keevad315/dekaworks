@@ -19,3 +19,27 @@ if (navToggle && nav) {
     });
   });
 }
+
+let backToTopButton = document.getElementById('back-to-top');
+
+if (!backToTopButton) {
+  backToTopButton = document.createElement('button');
+  backToTopButton.id = 'back-to-top';
+  backToTopButton.className = 'back-to-top';
+  backToTopButton.type = 'button';
+  backToTopButton.setAttribute('aria-label', 'Back to top');
+  backToTopButton.textContent = 'Top';
+  document.body.appendChild(backToTopButton);
+}
+
+const toggleBackToTop = () => {
+  const shouldShow = window.scrollY > 320;
+  backToTopButton.classList.toggle('show', shouldShow);
+};
+
+window.addEventListener('scroll', toggleBackToTop, { passive: true });
+toggleBackToTop();
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
