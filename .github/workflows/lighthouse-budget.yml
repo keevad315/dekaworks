@@ -1,0 +1,28 @@
+name: Lighthouse Budget
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Lighthouse CI and static server
+        run: npm install -g @lhci/cli@0.15.x http-server
+
+      - name: Run Lighthouse budgets
+        run: lhci autorun --config=.lighthouserc.json
