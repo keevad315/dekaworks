@@ -22,6 +22,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate shared service head block sync
+        run: python tools/sync_service_head.py --check
+
       - name: Validate internal links and static metadata
         run: |
           python - <<'PY'
