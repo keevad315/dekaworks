@@ -3,6 +3,17 @@ name: Deploy static site to Pages
 on:
   push:
     branches: ["main"]
+    paths:
+      - "*.html"
+      - "assets/**"
+      - "styles.css"
+      - "script.js"
+      - "sitemap.xml"
+      - "robots.txt"
+      - "CNAME"
+      - ".github/workflows/deploy-pages.yml"
+      - "tools/validate_site.py"
+      - "tools/sync_service_head.py"
   workflow_dispatch:
 
 permissions:

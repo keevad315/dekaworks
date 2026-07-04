@@ -2,157 +2,120 @@
 
 Date: 2026-07-04
 Branch: main
-Latest commit at handoff: b5b3eea
+Latest handoff update: includes all work through commit `12060f9` plus workflow hardening staged after that commit.
 
-## 1) What was fixed
+## 1) Current State
 
-### GitHub Pages deploy failure
-- Root cause was deploy configuration mismatch for a static site repo.
-- Added a proper Pages workflow to deploy repository root as static artifact.
+- Site is deployed and passing after Pages workflow fixes.
+- Core CI checks are in place for deploy safety and content integrity.
+- Performance guardrails are enabled via Lighthouse CI.
+- Homepage now links comparison content to a dedicated page for cleaner UX.
 
-File:
+## 2) Major Changes Completed
+
+### Deploy and CI stability
+- Added GitHub Pages deployment workflow.
+- Added pre-deploy validations:
+  - service-page shared head sync check
+  - internal link checks
+  - robots/sitemap checks
+- Moved inline validation logic into a script to avoid heredoc/indentation failures.
+- Upgraded Actions versions to avoid Node 20 deprecation warnings.
+
+Primary files:
 - .github/workflows/deploy-pages.yml
+- tools/validate_site.py
+- tools/sync_service_head.py
 
-### Added deploy-time validation gates
-- Added validation checks before deploy:
-  - Internal local link checks from all HTML files.
-  - robots.txt existence + Sitemap line presence.
-  - sitemap.xml existence + parse checks + URL entry checks.
-- Deploy job now requires validation job success.
+### Performance + lean-loading work
+- Added Lighthouse budget workflow and config.
+- Reduced font weights and deferred local JS loading.
+- Added critical CSS + non-blocking stylesheet load strategy on homepage and service pages.
 
-File:
-- .github/workflows/deploy-pages.yml
-
-### Added validation allowlist support
-- Link checker now supports intentional exceptions:
-  - ignored_refs (exact paths)
-  - ignored_prefixes (path prefix matches)
-
-File:
-- .github/workflows/deploy-pages.yml
-
-## 2) Performance and lean-loading updates
-
-### Lighthouse CI budget workflow
-- Added Lighthouse workflow running on push/main and pull requests.
-- Added `.lighthouserc.json` with score thresholds and key URLs.
-
-Files:
+Primary files:
 - .github/workflows/lighthouse-budget.yml
 - .lighthouserc.json
-
-### HTML loading improvements
-- Deferred local `script.js` includes on non-home pages where present.
-- Reduced Google Font weights from `400;500;600;700;800` to `400;600;700`.
-- Homepage (`index.html`):
-  - Added small critical CSS block for above-the-fold content.
-  - Converted stylesheet to non-blocking load pattern:
-    - preload stylesheet
-    - `media="print"` + `onload` swap to `all`
-    - `noscript` fallback
-- Service pages (`app-development.html`, `web-development.html`, `ai-solutions.html`, `consulting.html`):
-  - Added service-page critical CSS block.
-  - Same non-blocking stylesheet load pattern.
-
-Files touched:
 - index.html
 - app-development.html
 - web-development.html
 - ai-solutions.html
 - consulting.html
-- 404.html
-- thank-you.html
-- privacy-policy.html
-- terms-and-conditions.html
-- case-study-template.html
 
-## 3) Maintainability improvements
+### UX/content cleanup
+- Removed duplicate Bildva card.
+- Stabilized comparison table layout in CSS.
+- Moved full comparison content to dedicated page and converted homepage section to a preview CTA.
 
-### Shared head-block sync for service pages
-- Added explicit markers around shared service head block:
-  - `<!-- shared-service-head:start -->`
-  - `<!-- shared-service-head:end -->`
-- Added sync/check tool to enforce consistency across service pages.
-- CI now runs this check in deploy workflow.
+Primary files:
+- index.html
+- comparison.html
+- styles.css
+- sitemap.xml
 
-Files:
-- tools/sync_service_head.py
-- .github/workflows/deploy-pages.yml
-- app-development.html
-- web-development.html
-- ai-solutions.html
-- consulting.html
+## 3) Newer Commit Timeline (newest first)
 
-## 4) Commit timeline (newest first)
-
+- 12060f9 feat: move full comparison to dedicated page
+- 9573991 ci: upgrade actions versions and node runtime
+- 0694160 ci: move site validation to dedicated python script
+- 05e6176 fix: correct indentation in deploy validation script
+- c8ae8c0 fix: remove duplicate Bildva card and stabilize comparison table layout
+- 7dc0653 docs: add detailed project handoff
 - b5b3eea chore: enforce shared service head block sync
 - d928352 perf: add critical css and async stylesheet loading to service pages
 - a82adc2 perf: inline homepage critical css and async stylesheet load
 - e7af312 perf: lean loading defaults and lighthouse budgets
-- aeb12bb ci: add allowlist support for link validation
-- 9dd0d0a ci: add pages validation checks and workflow badge
-- b863b2f ci: add github pages deployment workflow
-- 4e36c72 chore: force pages redeploy
 
-## 5) Operational commands for later
+## 4) Active Workflow Behavior
 
-### Verify clean git state
+### Deploy workflow
+- File: `.github/workflows/deploy-pages.yml`
+- Trigger: push to `main` and manual dispatch.
+- Purpose: validate + deploy Pages artifact.
+- Validation steps:
+  - `python tools/sync_service_head.py --check`
+  - `python tools/validate_site.py`
+
+### Lighthouse workflow
+- File: `.github/workflows/lighthouse-budget.yml`
+- Trigger: push/PR for site-related files.
+- Purpose: budget regressions in performance/accessibility/best-practices/SEO.
+
+## 5) Operational Commands
+
+### Check repo state
 ```powershell
 git status -sb
 ```
 
-### Run service head sync check locally
+### Run local validation gate
 ```powershell
 python tools/sync_service_head.py --check
+python tools/validate_site.py
 ```
 
-### Auto-sync service head block from source page
-Source of truth currently: `app-development.html`
+### Re-sync service shared head block
 ```powershell
 python tools/sync_service_head.py --write
 ```
 
-### Trigger a redeploy manually
+### Force redeploy if needed
 ```powershell
 git commit --allow-empty -m "chore: force pages redeploy"
 git push origin main
 ```
 
-## 6) CI/CD expectations
+## 6) Notes + Tradeoffs
 
-### Deploy workflow
-- Workflow: `Deploy static site to Pages`
-- Trigger: push to `main` and manual dispatch.
-- Steps:
-  - checkout
-  - shared head sync check
-  - internal links/robots/sitemap validation
-  - pages artifact upload
-  - pages deploy
+- Critical CSS is intentionally minimal; full style fidelity still comes from `styles.css` after async swap.
+- Service-page shared head block source of truth is still `app-development.html`.
+- If comparison content changes, update both `comparison.html` and homepage preview CTA copy.
 
-### Performance workflow
-- Workflow: `Lighthouse Budget`
-- Trigger: pull_request and push to `main`.
-- Runs Lighthouse against key pages and enforces configured thresholds.
+## 7) Fast Failure Triage
 
-## 7) Known tradeoffs / notes
-
-- Critical CSS is intentionally minimal and focused on above-the-fold stability and faster first paint.
-- Full styling still comes from `styles.css` after async stylesheet swap.
-- If service-page hero/header design changes, update one source page block and run `--write`.
-
-## 8) Suggested next improvements (optional)
-
-1. Add image optimization pass when image-heavy sections are introduced (AVIF/WebP + responsive sizes).
-2. Add HTML minification in build/deploy step if repo grows significantly.
-3. Expand Lighthouse URLs to include legal and thank-you pages for broader guardrails.
-4. Add a tiny CHANGELOG.md for non-technical stakeholders.
-
-## 9) Fast recovery checklist
-
-If deploy fails later:
-1. Open failed workflow run details in Actions.
-2. Check sync gate first (`tools/sync_service_head.py --check`).
-3. Check broken local links reported by validation step.
-4. Confirm robots/sitemap still valid after content edits.
-5. If urgent and no content changes needed, force redeploy commit.
+If deploy fails:
+1. Open latest Actions run for `main` (ignore older failed runs if newer commit passed).
+2. Reproduce locally:
+   - `python tools/sync_service_head.py --check`
+   - `python tools/validate_site.py`
+3. Fix reported file/link/sitemap issue.
+4. Push a small targeted commit.

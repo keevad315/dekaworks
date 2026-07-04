@@ -2,8 +2,26 @@ name: Lighthouse Budget
 
 on:
   pull_request:
+    paths:
+      - "*.html"
+      - "assets/**"
+      - "styles.css"
+      - "script.js"
+      - ".lighthouserc.json"
+      - ".github/workflows/lighthouse-budget.yml"
   push:
     branches: ["main"]
+    paths:
+      - "*.html"
+      - "assets/**"
+      - "styles.css"
+      - "script.js"
+      - ".lighthouserc.json"
+      - ".github/workflows/lighthouse-budget.yml"
+
+concurrency:
+  group: lighthouse-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
