@@ -38,16 +38,16 @@ jobs:
           errors = []
 
           attr_pattern = re.compile(r'(?:href|src)=["\']([^"\']+)["\']', re.IGNORECASE)
-            skip_prefixes = ('http://', 'https://', '//', 'mailto:', 'tel:', 'javascript:', 'data:')
+          skip_prefixes = ('http://', 'https://', '//', 'mailto:', 'tel:', 'javascript:', 'data:')
 
-            # Add intentional exceptions here if a path should not be treated as a broken link.
-            ignored_refs = {
+          # Add intentional exceptions here if a path should not be treated as a broken link.
+          ignored_refs = {
               # '/favicon.ico',
               # '/apple-touch-icon.png',
-            }
-            ignored_prefixes = (
+          }
+          ignored_prefixes = (
               # '/external/',
-            )
+          )
 
           def resolve_target(html_file: Path, raw_target: str) -> Path:
               target = raw_target.split('#', 1)[0].split('?', 1)[0].strip()
