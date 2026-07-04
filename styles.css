@@ -276,6 +276,52 @@ p {
   font-size: 0.92rem;
 }
 
+.table-wrap {
+  margin-top: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(18, 26, 48, 0.76);
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.85rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: top;
+}
+
+.comparison-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: rgba(12, 18, 33, 0.97);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.comparison-table tbody td {
+  color: var(--muted);
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  color: var(--text);
+  font-weight: 600;
+  width: 21%;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: 0;
+}
+
 .process-list {
   margin: 1.2rem 0 0;
   padding: 0;
