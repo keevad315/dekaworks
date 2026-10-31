@@ -114,7 +114,7 @@ a {
   display: grid;
   grid-template-columns: 1.3fr 0.9fr;
   gap: 2rem;
-  align-items: start;
+  align-items: center;
 }
 
 .eyebrow {
@@ -733,5 +733,28 @@ summary {
 
   .site-nav .btn {
     width: 100%;
+  }
+}
+
+/* Brand mark + readable header button */
+.brand-mark {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+.site-nav a.btn,
+.site-nav a.btn:hover {
+  color: #05101f;
+}
+
+/* Two-column card grid for 4-card sections */
+.cards-grid.cards-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 980px) {
+  .cards-grid.cards-grid-2 {
+    grid-template-columns: 1fr;
   }
 }

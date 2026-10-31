@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/favicons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/favicons/logo-icon.png" />
     <title>Deka Works Studio | Mobile App Development, Web Development & AI Solutions</title>
     <meta
       name="description"
@@ -182,6 +184,11 @@
         background: linear-gradient(135deg, var(--brand), var(--brand-2));
         box-shadow: 0 0 16px rgba(110, 231, 255, 0.8);
       }
+      .brand-mark {
+        display: block;
+        height: 28px;
+        width: auto;
+      }
       .site-nav {
         display: flex;
         align-items: center;
@@ -200,7 +207,7 @@
         display: grid;
         grid-template-columns: 1.3fr 0.9fr;
         gap: 2rem;
-        align-items: start;
+        align-items: center;
       }
       .eyebrow {
         color: var(--brand);
@@ -251,7 +258,7 @@
     <header class="site-header" id="top">
       <div class="container nav-wrap">
         <a class="brand" href="#top" aria-label="Deka Works Studio home">
-          <span class="brand-dot"></span>
+          <img class="brand-mark" src="assets/logos/logo-icon.svg" alt="" width="22" height="28" />
           <span>Deka Works Studio</span>
         </a>
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -259,12 +266,8 @@
         </button>
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#services">Services</a>
-          <a href="#process">Process</a>
-          <a href="#why-choose-us">Why Choose Us</a>
-          <a href="comparison.html">Comparison</a>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#portfolio">Our Work</a>
           <a href="#pricing">Pricing</a>
-          <a href="#testimonials">Testimonials</a>
           <a href="#about">About</a>
           <a href="#faq">FAQ</a>
           <a href="https://portal.dekaworks.com/" target="_blank" rel="noopener noreferrer">Client Portal</a>
@@ -320,7 +323,7 @@
             Flexible engagement from rapid MVP development to long-term product partnerships in
             mobile app development, web development, AI automation, and consulting.
           </p>
-          <div class="cards-grid">
+          <div class="cards-grid cards-grid-2">
             <article class="card">
               <h3>App Development</h3>
               <p>
@@ -448,58 +451,66 @@
 
       <section class="section" id="portfolio">
         <div class="container">
-          <h2>Selected Work</h2>
+          <h2>Our Products</h2>
           <p class="section-copy">
-            We share outcome metrics only after launch analytics are validated and client approval is granted.
+            Apps we design, build, and run ourselves, using the same process we bring to client work.
           </p>
-          <div class="cards-grid portfolio-grid">
-            <article class="card case-study">
-              <div class="case-head">
-                <h3>FloArte</h3>
-                <span class="chip">Mobile Commerce</span>
-              </div>
-              <p>
-                Designed and built a clean, mobile-first shopping experience with a streamlined
-                checkout path and improved content hierarchy.
-              </p>
-              <ul class="case-metrics">
-                <li>Faster page performance</li>
-                <li>Clearer product discovery flow</li>
-                <li>Improved purchase journey UX</li>
-              </ul>
-              <p class="metrics-placeholder">Verified outcome metrics are documented after analytics review.</p>
-            </article>
+          <div class="cards-grid cards-grid-2 portfolio-grid">
             <article class="card case-study">
               <div class="case-head">
                 <h3>Kinties</h3>
-                <span class="chip">Brand + Web</span>
+                <span class="chip">Android · Closed testing</span>
               </div>
               <p>
-                Crafted a modern brand web presence with stronger messaging, cleaner navigation,
-                and conversion-focused page sections.
+                A private space for families, away from corporate social media. Share births, graduations, and family news, and plan reunions together in one place.
               </p>
               <ul class="case-metrics">
-                <li>Stronger visual consistency</li>
-                <li>Better lead-capture flow</li>
-                <li>Improved mobile readability</li>
+                <li>Invite-only family groups, so only family can see and share</li>
+                <li>Reunion tools: RSVPs, budget, polls, and activities</li>
+                <li>Shared photo vault organized by year, plus a family video room</li>
               </ul>
-              <p class="metrics-placeholder">Verified outcome metrics are documented after analytics review.</p>
+            </article>
+            <article class="card case-study">
+              <div class="case-head">
+                <h3>The Bride Society</h3>
+                <span class="chip">Android · In development</span>
+              </div>
+              <p>
+                A wedding planning app with Glimmer, a built-in AI helper that guides couples from the first idea to the big day.
+              </p>
+              <ul class="case-metrics">
+                <li>Plan colors, flowers, attire, and decor around your budget</li>
+                <li>Find local shops near your venue</li>
+                <li>Wedding-day mode for helpers and vendors</li>
+              </ul>
+            </article>
+            <article class="card case-study">
+              <div class="case-head">
+                <h3>FloArte</h3>
+                <span class="chip">Android · Closed testing</span>
+              </div>
+              <p>
+                A visual thinking tool that maps projects, systems, and processes as clear flowcharts, so you always know where you are and what comes next.
+              </p>
+              <ul class="case-metrics">
+                <li>Built for planning apps, products, and team processes</li>
+                <li>Keeps every step and decision in one view</li>
+                <li>Designed for engineering, product, and onboarding teams</li>
+              </ul>
             </article>
             <article class="card case-study">
               <div class="case-head">
                 <h3>Bildva</h3>
-                <span class="chip">AI Guided Learning Platform</span>
+                <span class="chip">Web · Live</span>
               </div>
               <p>
-                A guided creation platform where complete beginners build a real app while learning
-                the fundamentals — without feeling lost, overwhelmed, or not technical enough.
+                A guided creation platform where complete beginners build a real app while learning the fundamentals, without feeling lost, overwhelmed, or not technical enough.
               </p>
               <ul class="case-metrics">
                 <li>Teaches by doing through real app creation, not lectures</li>
                 <li>AI mentor adapts explanations to pace, confidence, and curiosity</li>
                 <li>Users finish with a working app they can confidently show off</li>
               </ul>
-              <p class="metrics-placeholder">A self-teaching builder powered by an adaptive AI mentor, designed to remove technical fear and create momentum through small wins.</p>
             </article>
           </div>
         </div>
