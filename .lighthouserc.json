@@ -6,10 +6,7 @@
       "startServerReadyPattern": "Available on",
       "url": [
         "http://127.0.0.1:8080/",
-        "http://127.0.0.1:8080/app-development.html",
-        "http://127.0.0.1:8080/web-development.html",
-        "http://127.0.0.1:8080/ai-solutions.html",
-        "http://127.0.0.1:8080/consulting.html"
+        "http://127.0.0.1:8080/app-testers.html"
       ],
       "settings": {
         "chromeFlags": "--no-sandbox --disable-dev-shm-usage"
