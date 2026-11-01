@@ -802,3 +802,9 @@ summary {
     align-items: flex-start;
   }
 }
+
+.case-tags {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
