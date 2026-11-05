@@ -905,3 +905,13 @@ summary {
   flex-wrap: wrap;
   gap: 0.6rem;
 }
+
+.dd-visual {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.9rem;
+}
