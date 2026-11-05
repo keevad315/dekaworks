@@ -915,3 +915,19 @@ summary {
   border-radius: 10px;
   margin-bottom: 0.9rem;
 }
+
+.dd-visuals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.dd-visuals .dd-visual {
+  margin-bottom: 0;
+}
+
+.dd-visual-mark {
+  background: #f6efe6;
+  object-fit: contain;
+}
