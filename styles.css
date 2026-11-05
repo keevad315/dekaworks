@@ -808,3 +808,36 @@ summary {
   align-items: center;
   gap: 0.5rem;
 }
+
+/* Creative Partners */
+.partner-card {
+  max-width: 640px;
+}
+
+.partner-role {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.partner-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0.9rem 0 1.1rem;
+  padding: 0;
+}
+
+.partner-services li {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.partner-card .case-head {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 0.9rem;
+}
