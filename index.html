@@ -612,6 +612,20 @@
           navToggle.setAttribute('aria-expanded', String(!expanded));
           siteNav.classList.toggle('open');
         });
+        const closeNav = () => {
+          siteNav.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        };
+        // Close the menu after a link is tapped, on a tap outside it, or with Escape.
+        siteNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav));
+        document.addEventListener('click', (event) => {
+          if (siteNav.classList.contains('open') && !siteNav.contains(event.target) && !navToggle.contains(event.target)) {
+            closeNav();
+          }
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') closeNav();
+        });
       }
       const contactForm = document.getElementById('contact-form');
       const formNote = document.getElementById('form-note');
