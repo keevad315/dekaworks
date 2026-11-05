@@ -12,11 +12,20 @@ if (navToggle && nav) {
     navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
+  const closeNav = () => {
+    nav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  };
+
+  // Close the menu after a link is tapped, on a tap outside it, or with Escape.
+  nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav));
+  document.addEventListener('click', (event) => {
+    if (nav.classList.contains('open') && !nav.contains(event.target) && !navToggle.contains(event.target)) {
+      closeNav();
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeNav();
   });
 }
 
