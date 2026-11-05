@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/favicons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/favicons/logo-icon.png" />
+    <title>Destiny's Designs | Creative Partner | Deka Works Studio</title>
+    <meta
+      name="description"
+      content="Destiny's Designs by Destiny Kitchen: brand identity, logos, app icons, social graphics and website graphics. A Deka Works Studio creative partner."
+    />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://dekaworks.com/destinys-designs.html" />
+    <meta property="og:title" content="Destiny's Designs | Strategic Digital &amp; Visual Design" />
+    <meta property="og:description" content="Brand identity, web visuals and graphics for growing businesses and community organizations." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dekaworks.com/destinys-designs.html" />
+    <meta property="og:image" content="https://dekaworks.com/assets/logos/og-image.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer data-domain="dekaworks.com" src="https://plausible.io/js/script.outbound-links.file-downloads.js"></script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Deka Works Studio home">
+          <img class="brand-mark" src="assets/logos/logo-icon.svg" alt="" width="22" height="28" />
+          <span>Deka Works Studio</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="index.html#apps">Our Apps</a>
+          <a href="index.html#partners">Partners</a>
+          <a href="index.html#about">About</a>
+          <a href="mailto:DestinyJKitchen@gmail.com?subject=Design%20project%20(found%20you%20on%20Deka%20Works)" class="btn btn-sm">Email Destiny</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section dd-hero">
+        <div class="container">
+          <p class="eyebrow">Deka Works Creative Partner</p>
+          <h1>Destiny&rsquo;s Designs</h1>
+          <p class="dd-tagline">Strategic Digital &amp; Visual Design</p>
+          <p class="section-copy">
+            Building custom identity systems, web platforms, and brand assets for growing businesses and community organizations.
+            Destiny Kitchen is also the designer behind the graphics in Deka Works apps.
+          </p>
+          <ul class="partner-services" aria-label="Design services">
+            <li>Logos &amp; branding</li>
+            <li>App icons &amp; screenshots</li>
+            <li>Flyers &amp; social graphics</li>
+            <li>Website graphics</li>
+          </ul>
+          <a class="btn" href="mailto:DestinyJKitchen@gmail.com?subject=Design%20project%20(found%20you%20on%20Deka%20Works)">Start a design project</a>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="clients">
+        <div class="container">
+          <h2>Selected Collaborations &amp; Clients</h2>
+          <p class="section-copy">
+            A snapshot of brands, organizations, and platforms Destiny has had the privilege to build for, manage, and elevate.
+          </p>
+
+          <!-- Client logo grid goes here once Destiny sends the logos (class="dd-logo-grid"). -->
+
+          <div class="dd-cards">
+            <article class="card dd-card">
+              <p class="dd-industry">Local Services</p>
+              <h3>Frankie Mae Cleaning Service</h3>
+              <p class="dd-focus">Digital Presence &bull; Brand Identity</p>
+              <p>
+                A clean, fast website and brand presence built to bring in local clients and make booking a service easy.
+              </p>
+            </article>
+
+            <article class="card dd-card">
+              <p class="dd-industry">Community Organizations</p>
+              <h3>Bond Community Resource Center</h3>
+              <p class="dd-focus">Web Hosting &bull; Management &bull; Infrastructure</p>
+              <p>
+                Reliable web hosting, an accessible visual layout, and ongoing site maintenance that support the center&rsquo;s community outreach.
+              </p>
+            </article>
+
+            <article class="card dd-card">
+              <p class="dd-industry">Transportation &amp; Logistics</p>
+              <h3>Quadarryl Transport</h3>
+              <p class="dd-focus">Web Systems &bull; Visual Assets</p>
+              <p>
+                A responsive website and digital brand materials built to show customers a credible, professional operation.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="work-with-destiny">
+        <div class="container">
+          <h2>Work with Destiny</h2>
+          <p class="section-copy">
+            Tell Destiny what you need, whether that's a logo, a full brand, app store graphics, or visuals for your website.
+            Some client work is private, so expanded samples are shared directly when you reach out.
+          </p>
+          <a class="btn" href="mailto:DestinyJKitchen@gmail.com?subject=Design%20project%20(found%20you%20on%20Deka%20Works)">Email DestinyJKitchen@gmail.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>&copy; <span id="year"></span> Deka Works Studio. Destiny&rsquo;s Designs is an independent creative partner.</p>
+        <nav aria-label="Legal links" class="footer-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.querySelector('.nav-toggle');
+      const siteNav = document.querySelector('.site-nav');
+      if (navToggle && siteNav) {
+        navToggle.addEventListener('click', () => {
+          const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', String(!expanded));
+          siteNav.classList.toggle('open');
+        });
+      }
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
