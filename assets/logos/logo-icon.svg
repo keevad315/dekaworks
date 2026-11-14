@@ -1,9 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 80" role="img" aria-label="Deka Works Studio">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#6ee7ff"/>
-      <stop offset="1" stop-color="#8b5cf6"/>
-    </linearGradient>
-  </defs>
-  <path fill="url(#g)" fill-rule="evenodd" d="M0 0H34L64 40L34 80H0Z M15 18V62L50 40Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="120 120 784 784" role="img" aria-label="Deka Works Studio">
+  <rect x="131" y="131" width="329" height="761" rx="105" fill="#2A9D8F"/>
+  <path d="M512 132H600A292 292 0 0 1 892 424H512Z" fill="#C7727F"/>
+  <rect x="512" y="460" width="380" height="103" rx="51.5" fill="#2B2A3A"/>
+  <path d="M512 598H892A292 292 0 0 1 600 890H512Z" fill="#E8B04B"/>
 </svg>
