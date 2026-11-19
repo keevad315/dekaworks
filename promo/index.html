@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deka Works Studio — Simple apps with a real purpose</title>
-<meta name="description" content="Deka Works Studio is an independent app studio. It designs, builds and runs its own apps: Kinties, The Bride Society, FloArte, Launchkins, Bildva and PlateGrid.">
+<meta name="description" content="Deka Works Studio is an independent app studio that designs, builds and runs its own apps: Kinties, The Bride Society, FloArte, Launchkins, Bildva and PlateGrid.">
 <link rel="icon" href="img/deka.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,195 +13,157 @@
   :root{--teal:#2A9D8F;--rose:#C7727F;--gold:#E8B04B;--ink:#2B2A3A;--soft:#5d5b6e;--bg:#FAF7F2}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.45}
-  section{padding:72px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
-  .wrap{max-width:860px;width:100%;display:flex;flex-direction:column;align-items:center;gap:18px}
-  .hero{min-height:100vh;justify-content:center;background:radial-gradient(circle at 15% 20%,#e7f4f1 0,transparent 45%),radial-gradient(circle at 85% 80%,#fbefd9 0,transparent 45%),var(--bg)}
+  section{min-height:100vh;padding:64px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .wrap{max-width:820px;width:100%;display:flex;flex-direction:column;align-items:center;gap:22px}
+  .deka{background:radial-gradient(circle at 15% 20%,#e7f4f1 0,transparent 45%),radial-gradient(circle at 85% 80%,#fbefd9 0,transparent 45%),var(--bg)}
   .mark{width:120px;height:120px}
   .wordmark{display:flex;align-items:center;gap:14px}
   .wordmark img{width:58px;height:58px}
   .wordmark span{font-weight:800;font-size:34px;letter-spacing:-.5px}
   .wordmark small{display:block;font-size:12px;letter-spacing:6px;color:var(--soft);font-weight:600;text-align:left}
-  h1{font-size:clamp(32px,6vw,60px);font-weight:800;letter-spacing:-1px;line-height:1.1}
-  h1 em,h2 em{font-style:normal;color:var(--teal)}
-  .lead{font-size:clamp(17px,2.3vw,22px);color:var(--soft);max-width:680px}
-  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;width:100%;margin-top:8px}
-  .pill{background:#fff;border:1px solid #ece6db;border-radius:18px;padding:18px;text-align:left}
-  .pill b{display:block;font-size:17px;margin-bottom:4px}
-  .pill span{color:var(--soft);font-size:15px}
-  .app .icon{width:132px;height:132px;border-radius:30px;box-shadow:0 16px 36px rgba(43,42,58,.18);overflow:hidden;background:#fff}
-  .app .icon img{width:100%;height:100%;display:block}
-  .app h2{font-size:clamp(38px,6.5vw,64px);font-weight:800;letter-spacing:-1px;line-height:1.05}
-  .app .tag{font-size:clamp(22px,3.2vw,30px);font-weight:600}
-  .app .what{font-size:clamp(17px,2.2vw,21px);max-width:680px}
-  .who{font-size:16px;color:var(--soft);max-width:640px}
-  .who b{color:var(--ink)}
-  .feats{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;width:100%;margin-top:6px}
-  .feats li{background:rgba(255,255,255,.75);border:1px solid rgba(0,0,0,.07);border-radius:16px;padding:14px 16px;text-align:left;font-size:15px}
-  .feats li b{display:block;font-size:16px;margin-bottom:2px}
-  .shots{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
-  .shots img{width:min(30vw,200px);border-radius:22px;box-shadow:0 14px 30px rgba(43,42,58,.18);border:1px solid rgba(0,0,0,.06)}
-  .where{display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:4px}
-  .where span{font-size:15px;font-weight:600;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid #e6e1d8}
-  .soon{display:inline-block;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #e6e1d8;color:var(--soft)}
-  .kinties{background:linear-gradient(180deg,#fdf1e4,#eaf7f1)} .kinties .tag{color:#0f5f5c}
-  .tbs{background:linear-gradient(180deg,#fbf3ee,#efe9f8)} .tbs .tag{color:#9a5763}
-  .floarte{background:linear-gradient(180deg,#fff3d6,#f8f6ef)} .floarte .tag{color:#E85D2A}
-  .launchkins{background:linear-gradient(180deg,#0b1030,#1b2150);color:#fff}
-  .launchkins .tag{color:#FFC83D} .launchkins .who,.launchkins .what{color:#d5d9f2} .launchkins .who b{color:#fff}
-  .launchkins .feats li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#d5d9f2} .launchkins .feats li b{color:#fff}
-  .launchkins .where span{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff}
-  .bildva{background:linear-gradient(180deg,#eef3ff,#e3ebfd)} .bildva .tag{color:#1E3A8A}
-  .plategrid{background:linear-gradient(180deg,#effaf2,#fff3e8)} .plategrid .tag{color:#15803D}
-  .end{min-height:100vh;justify-content:center;background:radial-gradient(circle at 80% 20%,#e7f4f1 0,transparent 45%),radial-gradient(circle at 20% 85%,#f6e4e7 0,transparent 45%),var(--bg)}
-  .site{font-size:clamp(26px,4vw,40px);font-weight:800;color:var(--teal)}
+  .eyebrow{font-size:15px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal)}
+  h1{font-size:clamp(34px,6vw,62px);font-weight:800;letter-spacing:-1px;line-height:1.1}
+  h1 em{font-style:normal;color:var(--teal)}
+  .lead{font-size:clamp(18px,2.5vw,24px);color:var(--soft);max-width:700px}
+  .stories{display:grid;gap:14px;width:100%;text-align:left}
+  .story{background:#fff;border:1px solid #ece6db;border-radius:18px;padding:18px 20px;display:flex;gap:16px;align-items:center}
+  .story img{width:56px;height:56px;border-radius:14px;flex-shrink:0;box-shadow:0 6px 14px rgba(43,42,58,.15)}
+  .story p{font-size:17px;color:var(--soft)} .story b{color:var(--ink)}
+  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;width:100%}
+  .pill{background:#fff;border:1px solid #ece6db;border-radius:18px;padding:20px;text-align:left}
+  .pill b{display:block;font-size:18px;margin-bottom:6px}
+  .pill span{color:var(--soft);font-size:16px}
+  .card .icon{width:200px;height:200px;border-radius:46px;overflow:hidden;background:#fff;box-shadow:0 22px 46px rgba(20,20,40,.22)}
+  .card .icon img{width:100%;height:100%;display:block}
+  .card h2{font-size:clamp(46px,8vw,84px);font-weight:800;letter-spacing:-2px;line-height:1}
+  .card .tag{font-size:clamp(24px,3.6vw,38px);font-weight:600;line-height:1.2;max-width:820px}
+  .card .desc{font-size:clamp(18px,2.6vw,28px);line-height:1.4;max-width:760px}
+  .card .by{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:600;margin-top:10px;opacity:.85}
+  .card .by img{width:26px}
+  .kinties{background:linear-gradient(180deg,#fdf1e4,#eaf7f1)} .kinties .tag{color:#0f5f5c} .kinties .desc,.kinties .by{color:#5d5b6e}
+  .tbs{background:linear-gradient(180deg,#fbf3ee,#efe9f8)} .tbs .tag{color:#9a5763} .tbs .desc,.tbs .by{color:#5d5b6e}
+  .floarte{background:linear-gradient(180deg,#fff3d6,#f8f6ef)} .floarte .tag{color:#E85D2A} .floarte .desc,.floarte .by{color:#5d5b6e}
+  .launchkins{background:linear-gradient(180deg,#0b1030,#1b2150);color:#fff} .launchkins .tag{color:#FFC83D} .launchkins .desc,.launchkins .by{color:#d5d9f2}
+  .bildva{background:linear-gradient(180deg,#eef3ff,#e3ebfd)} .bildva .tag{color:#1E3A8A} .bildva .desc,.bildva .by{color:#5d5b6e}
+  .plategrid{background:linear-gradient(180deg,#effaf2,#fff3e8)} .plategrid .tag{color:#15803D} .plategrid .desc,.plategrid .by{color:#5d5b6e}
+  .site{font-size:clamp(28px,4.4vw,44px);font-weight:800;color:var(--teal)}
+  .contact{font-size:18px;color:var(--soft)}
   .strip{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
-  .strip img{width:62px;height:62px;border-radius:16px;box-shadow:0 8px 18px rgba(43,42,58,.15);background:#fff}
+  .strip img{width:64px;height:64px;border-radius:16px;box-shadow:0 8px 18px rgba(43,42,58,.15);background:#fff}
 </style>
 </head>
 <body>
 
-<!-- 1. HOOK -->
-<section class="hero">
+<section class="deka">
   <div class="wrap">
     <img class="mark" src="img/deka.svg" alt="Deka Works Studio logo">
     <h1>Apps should make life <em>easier.</em><br>Not louder.</h1>
-    <p class="lead">Most apps fight for your attention. We build the other kind.</p>
+    <p class="lead">Most apps are built to grab your attention. Ours are built to give it back.</p>
   </div>
 </section>
 
-<!-- 2. WHO WE ARE -->
-<section class="hero">
+<section class="deka">
   <div class="wrap">
     <div class="wordmark"><img src="img/deka.svg" alt=""><div><span>Deka Works</span><small>STUDIO</small></div></div>
     <h1>Simple apps with a <em>real purpose.</em></h1>
-    <p class="lead">Deka Works Studio is an independent app studio. We design, build and run our own apps, and each one starts with a real problem we've lived through.</p>
-    <div class="pillars">
-      <div class="pill"><b>Calm by design</b><span>One job per screen. No endless feeds, no clutter, nothing to hunt for.</span></div>
-      <div class="pill"><b>Built for every kind of brain</b><span>Made for busy minds, first-timers and every generation, from grandkids to grandparents.</span></div>
-      <div class="pill"><b>Tested by real people</b><span>Every app is tested with real users before launch and keeps improving after.</span></div>
+    <p class="lead">Deka Works Studio is an independent app studio. We design, build and run our own apps for real life: staying close to family, planning a wedding, finishing a big project and getting an app out into the world.</p>
+  </div>
+</section>
+
+<section class="deka">
+  <div class="wrap">
+    <p class="eyebrow">Where our apps come from</p>
+    <h1>Every app starts with a <em>real problem.</em></h1>
+    <div class="stories">
+      <div class="story"><img src="img/kinties.jpg" alt="Kinties"><p><b>Kinties</b> started because family news only reached whoever saw it on Facebook, and the rest of the family kept missing reunions and big moments.</p></div>
+      <div class="story"><img src="img/floarte.png" alt="FloArte"><p><b>FloArte</b> started because first-time builders kept losing track of where they were and what came next, and gave up on good ideas.</p></div>
+      <div class="story"><img src="img/launchkins.svg" alt="Launchkins"><p><b>Launchkins</b> started because getting an app through testing is hard and lonely, and nobody should have to pay just to be taken seriously.</p></div>
     </div>
   </div>
 </section>
 
-<!-- 3. KINTIES -->
-<section class="app kinties">
+<section class="deka">
+  <div class="wrap">
+    <p class="eyebrow">How we build</p>
+    <h1>Calm, clear and made for <em>everyone.</em></h1>
+    <div class="pillars">
+      <div class="pill"><b>Built for every kind of brain</b><span>One job per screen. Nothing to hunt for, no clutter. Made for busy minds and first-timers.</span></div>
+      <div class="pill"><b>Every generation can join in</b><span>Large text and simple steps, so grandparents can use it as easily as the grandkids.</span></div>
+      <div class="pill"><b>Tested by real people</b><span>Every app goes to real testers before launch. Their feedback decides what we build next.</span></div>
+      <div class="pill"><b>A real purpose, every time</b><span>Before we add anything, we ask one question: is this needed?</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="card kinties">
   <div class="wrap">
     <div class="icon"><img src="img/kinties.jpg" alt="Kinties app icon"></div>
     <h2>Kinties</h2>
     <p class="tag">Come home from social media.</p>
-    <p class="what">A private, calm home just for your family. Share news, photos and big moments, and plan reunions together, so nobody misses a family moment again.</p>
-    <p class="who"><b>For:</b> families who want to stay close without strangers, ads or drama, including relatives who aren't on social media.</p>
-    <ul class="feats">
-      <li><b>Invite-only</b>Only the family you invite can see anything.</li>
-      <li><b>Family chat &amp; photos</b>One safe place for every photo and conversation.</li>
-      <li><b>Family tree</b>Your whole family, every generation, built together.</li>
-      <li><b>Urgent alerts</b>When it really matters, everyone knows right away.</li>
-      <li><b>Reunion planning</b>RSVPs, budget, polls, schedule and a family video room.</li>
-      <li><b>Easy for every generation</b>Large text and simple screens.</li>
-    </ul>
-    <div class="shots"><img src="img/shots/kinties-1.jpg" alt="Kinties home screen"><img src="img/shots/kinties-3.jpg" alt="Kinties family chat"><img src="img/shots/kinties-4.jpg" alt="Kinties family photos"></div>
-    <div class="where"><span>Free for every family</span><span>Google Play</span><span>kinties.com</span></div>
+    <p class="desc">A private, calm home just for your family. Chat, photos, a family tree, urgent alerts and reunion planning, all in one safe place.</p>
+    <p class="by"><img src="img/deka.svg" alt="">Deka Works Studio</p>
   </div>
 </section>
 
-<!-- 4. THE BRIDE SOCIETY -->
-<section class="app tbs">
+<section class="card tbs">
   <div class="wrap">
     <div class="icon"><img src="img/tbs.jpg" alt="The Bride Society app icon"></div>
     <h2>The Bride Society</h2>
     <p class="tag">Never planned a wedding? Start with pictures.</p>
-    <p class="what">Wedding planning made for first-timers. Discover your style, dress up the whole look like a dream board, and let Glimmer, your AI wedding helper, guide every next step within your budget.</p>
-    <p class="who"><b>For:</b> couples planning their first wedding who don't know where to start.</p>
-    <ul class="feats">
-      <li><b>Find your style</b>See it before you choose it, with pictures instead of long lists.</li>
-      <li><b>Dress up your look</b>Swap colors, flowers, attire and decor on your board.</li>
-      <li><b>Meet Glimmer</b>Your AI wedding fairy who always knows the next step.</li>
-      <li><b>Priced for your guests</b>Every detail planned around your budget.</li>
-    </ul>
-    <div class="shots"><img src="img/shots/tbs-1.jpg" alt="The Bride Society style pictures"><img src="img/shots/tbs-3.jpg" alt="Dress up your wedding look"><img src="img/shots/tbs-6.jpg" alt="Glimmer AI wedding helper"></div>
-    <div class="where"><span>Free to start planning</span><span>Android</span><span>thebridesociety.co</span></div>
+    <p class="desc">Discover your style, dress up your whole look, and let Glimmer, your AI wedding helper, guide every step within your budget.</p>
+    <p class="by"><img src="img/deka.svg" alt="">Deka Works Studio</p>
   </div>
 </section>
 
-<!-- 5. FLOARTE -->
-<section class="app floarte">
+<section class="card floarte">
   <div class="wrap">
-    <div class="icon"><img src="img/floarte-real.png" alt="FloArte app icon"></div>
+    <div class="icon"><img src="img/floarte.png" alt="FloArte app icon"></div>
     <h2>FloArte</h2>
     <p class="tag">Where flow meets art.</p>
-    <p class="what">Map any process as a clear flowchart, so you always know where you are and what comes next. Describe it in plain words and FloArte draws it for you.</p>
-    <p class="who"><b>For:</b> app builders, students and teachers, project planners and teams, and anyone who gets lost halfway through a big project.</p>
-    <ul class="feats">
-      <li><b>AI Generate</b>Turn plain text into a complete, structured flow.</li>
-      <li><b>AI Repair</b>Clean up messy flows with one tap.</li>
-      <li><b>Auto-Layout</b>Neat, readable layouts in seconds, with no dragging.</li>
-      <li><b>Ready-made templates</b>Start from patterns for apps, schools and processes.</li>
-    </ul>
-    <div class="where"><span>Free to start</span><span>Google Play</span><span>floarte.app</span></div>
+    <p class="desc">Map any process as a clear flowchart. Describe it in plain words and FloArte draws it, so you always know what comes next.</p>
+    <p class="by"><img src="img/deka.svg" alt="">Deka Works Studio</p>
   </div>
 </section>
 
-<!-- 6. LAUNCHKINS -->
-<section class="app launchkins">
+<section class="card launchkins">
   <div class="wrap">
     <div class="icon"><img src="img/launchkins.svg" alt="Launchkins app icon"></div>
     <h2>Launchkins</h2>
     <p class="tag">Build. Test. Launch together.</p>
-    <p class="what">A community where app developers test each other's apps, give real feedback kindly and get through Google Play testing together. Every launch gets celebrated.</p>
-    <p class="who"><b>For:</b> independent app developers who need real testers, especially for Google Play's closed testing.</p>
-    <ul class="feats">
-      <li><b>A fair queue</b>Apps with the fewest testers come first, so nobody gets left behind.</li>
-      <li><b>No paid jumping</b>Nobody can pay to reach the top.</li>
-      <li><b>Step-by-step testing</b>Clear steps and a daily check-in for every app.</li>
-      <li><b>The Liftoff Wall</b>Every app that launches becomes a trophy.</li>
-    </ul>
-    <div class="shots"><img src="img/shots/lk-apps.jpg" alt="Launchkins apps to test"><img src="img/shots/lk-app.jpg" alt="Launchkins testing steps"><img src="img/shots/lk-liftoff.jpg" alt="Launchkins Liftoff Wall"></div>
-    <div class="where"><span>Always free for developers</span><span>launchkins.com</span></div>
+    <p class="desc">A community where app developers test each other's apps, get through Google Play testing together and celebrate every launch.</p>
+    <p class="by"><img src="img/deka.svg" alt="">Deka Works Studio</p>
   </div>
 </section>
 
-<!-- 7. BILDVA -->
-<section class="app bildva">
+<section class="card bildva">
   <div class="wrap">
     <div class="icon"><img src="img/bildva.png" alt="Bildva logo"></div>
     <h2>Bildva</h2>
     <p class="tag">Build something real.</p>
-    <p class="what">A guided platform where complete beginners build a real app, step by step, from first idea toward the app store, and learn the basics along the way.</p>
-    <p class="who"><b>For:</b> first-time builders who have an idea but feel lost, overwhelmed or "not technical enough."</p>
-    <ul class="feats">
-      <li><b>Learn by doing</b>You build a real app instead of watching lectures.</li>
-      <li><b>An AI mentor</b>Explanations that adapt to your pace and confidence.</li>
-      <li><b>Always know the next step</b>No more getting stuck halfway and giving up.</li>
-    </ul>
-    <div class="where"><span>On the web</span><span>bildva.com</span></div>
+    <p class="desc">A guided platform where complete beginners build a real app step by step, with an AI mentor that adapts to their pace.</p>
+    <p class="by"><img src="img/deka.svg" alt="">Deka Works Studio</p>
   </div>
 </section>
 
-<!-- 8. PLATEGRID -->
-<section class="app plategrid">
+<section class="card plategrid">
   <div class="wrap">
     <div class="icon"><img src="img/plategrid.png" alt="PlateGrid logo"></div>
     <h2>PlateGrid</h2>
     <p class="tag">Plan the month, one plate at a time.</p>
-    <p class="what">Pick the meals your family loves and get one complete grocery list for a week, two weeks or the whole month. No more getting home and missing half a meal.</p>
-    <p class="who"><b>For:</b> busy households and families stretching their grocery budget.</p>
-    <ul class="feats">
-      <li><b>Meals first</b>Shop from the meals you'll actually cook.</li>
-      <li><b>Week to month</b>One list for the whole stretch.</li>
-      <li><b>Fits how you eat</b>Options for different diets.</li>
-    </ul>
+    <p class="desc">Pick the meals your family loves and get one complete grocery list for a week, two weeks or the whole month.</p>
+    <p class="by"><img src="img/deka.svg" alt="">Deka Works Studio</p>
   </div>
 </section>
 
-<!-- 9. END -->
-<section class="end">
+<section class="deka">
   <div class="wrap">
     <div class="wordmark"><img src="img/deka.svg" alt=""><div><span>Deka Works</span><small>STUDIO</small></div></div>
     <h1>Apps for the moments that <em>matter.</em></h1>
     <div class="strip">
-      <img src="img/kinties.jpg" alt="Kinties"><img src="img/tbs.jpg" alt="The Bride Society"><img src="img/floarte-real.png" alt="FloArte"><img src="img/launchkins.svg" alt="Launchkins"><img src="img/bildva.png" alt="Bildva"><img src="img/plategrid.png" alt="PlateGrid">
+      <img src="img/kinties.jpg" alt="Kinties"><img src="img/tbs.jpg" alt="The Bride Society"><img src="img/floarte.png" alt="FloArte"><img src="img/launchkins.svg" alt="Launchkins"><img src="img/bildva.png" alt="Bildva"><img src="img/plategrid.png" alt="PlateGrid">
     </div>
     <p class="site">dekaworks.com</p>
+    <p class="contact">info@dekaworks.com</p>
   </div>
 </section>
 
