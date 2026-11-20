@@ -960,3 +960,7 @@ summary {
   font-weight: 600;
   color: var(--brand);
 }
+
+.cards-grid.cards-grid-2 .card-wide {
+  grid-column: 1 / -1;
+}
